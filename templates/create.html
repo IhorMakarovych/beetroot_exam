@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Створити рецепт</h2>
+<form method="post" enctype="multipart/form-data" action="/recipes/create">
+  Назва: <input name="title"><br/>
+  Тип: <input name="type"><br/>
+  Час в хвилинах: <input name="min_time" type="number"> - <input name="max_time" type="number"><br/>
+  Інгредієнти (назва: кількість):<br/>
+  <textarea name="ingredients" rows="6" cols="60"></textarea><br/>
+  Кроки приготування:<br/>
+  <textarea name="steps" rows="8" cols="60"></textarea><br/>
+  Фото: <input type="file" name="image"><br/>
+  <button>Створити</button>
+</form>
+{% endblock %}

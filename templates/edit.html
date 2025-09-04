@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Редагувати рецепт</h2>
+<form method="post" enctype="multipart/form-data" action="/recipes/{{ recipe.id }}/edit">
+  Назва: <input name="title" value="{{ recipe.title }}"><br/>
+  Тип: <input name="type" value="{{ recipe.type }}"><br/>
+  Час в хвилинах: <input name="min_time" type="number" value="{{ recipe.min_time }}"> - <input name="max_time" type="number" value="{{ recipe.max_time }}"><br/>
+  Інгрідієнти (назва: кількість):<br/>
+  <textarea name="ingredients" rows="6" cols="60">{% for ing in recipe.ingredients %}{{ ing.name }}: {{ ing.qty }}
+{% endfor %}</textarea><br/>
+  Кроки:<br/>
+  <textarea name="steps" rows="8" cols="60">{% for s in recipe.steps %}{{ s.description }}
+{% endfor %}</textarea><br/>
+  Фото: <input type="file" name="image"><br/>
+  <button>Зберегти</button>
+</form>
+{% endblock %}

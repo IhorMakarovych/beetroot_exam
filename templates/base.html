@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Смачні рецепти</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Смачні рецепти</h1>
+    <nav>
+      <a href="/">Список страв</a> |
+      <a href="/recipes/create">Додати рецепт</a> |
+      <a href="/register">Зареєструватися</a> |
+      <a href="/login">Вхід</a> |
+      <a href="/logout">Вихід</a>
+    </nav>
+    <hr/>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

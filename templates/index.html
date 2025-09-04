@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Список рецептів</h2>
+
+<form method="get" action="/" class="filters">
+  <label>Назва: <input name="q" value="{{ request.query_params.get('q','') }}"></label>
+  <label>Тип: <input name="type" value="{{ request.query_params.get('type','') }}"></label>
+  <label>Інгредієнти: <input name="ingredient" value="{{ request.query_params.get('ingredient','') }}"></label>
+  <button>Вибрати</button>
+</form>
+
+<ul>
+  {% for r in recipes %}
+    <li>
+      <a href="/recipes/{{ r.id }}">{{ r.title }}</a>
+      <div class="actions">
+        <a href="/recipes/{{ r.id }}/edit" class="button-link">Редагувати</a>
+        <a href="/recipes/{{ r.id }}/delete" class="button-link">Видалити</a>
+      </div>
+    </li>
+  {% else %}
+    <li>Рецептів не знайдено</li>
+  {% endfor %}
+</ul>
+{% endblock %}

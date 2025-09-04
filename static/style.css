@@ -1,0 +1,114 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #f3e8ff; /* ніжний фіолетовий */
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #a78bfa;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Фільтри в один рядок */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.filters label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.filters input {
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filters button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #7c3aed;
+  color: white;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #5b21b6;
+}
+
+/* Список рецептів */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+li {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+/* Кнопки */
+.actions {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 5px;
+}
+
+button,
+a.button-link {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.button-link {
+  background-color: #7c3aed;
+  color: white;
+}
+
+a.button-link:hover {
+  background-color: #5b21b6;
+}
+

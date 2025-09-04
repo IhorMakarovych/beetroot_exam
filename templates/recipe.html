@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ recipe.title }}</h2>
+<p>Тип: {{ recipe.type }}</p>
+<p>Час приготування: {{ recipe.min_time }} - {{ recipe.max_time }} min</p>
+{% if recipe.image %}<img src="/{{ recipe.image }}" style="max-width:400px"><br/>{% endif %}
+<h3>Інгредієнти</h3>
+<ul>
+{% for ing in recipe.ingredients %}<li>{{ ing.name }}: {{ ing.qty }}</li>{% endfor %}
+</ul>
+<h3>Steps</h3>
+<ol>
+{% for s in recipe.steps %}<li>{{ s.description }}</li>{% endfor %}
+</ol>
+<a href="/recipes/{{ recipe.id }}/edit">
+  <button type="button">Редагувати</button>
+</a>
+<form method="post" action="/recipes/{{ recipe.id }}/delete">
+  <button>Видалити</button>
+</form>
+{% endblock %}
